@@ -2,6 +2,8 @@ require('dotenv').config({ path: __dirname + '/config/.env' })
 const express = require('express')
 require('./config/db')
 const tableRouter = require('./routers/table')
+const userRouter = require('./routers/user')
+var cookieParser = require('cookie-parser')
 
 const app = express()
 app.use(express.json())
@@ -21,7 +23,11 @@ app.use(function (req, res, next) {
     next();
 })
 
-app.use(tableRouter);
+app.use(cookieParser())
+
+app.use('/table',tableRouter);
+app.use(userRouter);
+
 const server = app.listen(port, () => {
     console.log("Dine Running on : localhost", process.env.PORT);
 })

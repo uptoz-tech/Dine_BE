@@ -7,10 +7,10 @@ const TableController = new tableController();
 
 const router = express.Router()
 
-router.post('/Table/create',  asyncHandler(TableController.create))
-router.post('/Table/list', asyncHandler(TableController.list))
-router.post('/Table/update', asyncHandler(TableController.update))
-router.post('/Table/delete', asyncHandler(TableController.delete))
+router.post('/create',  asyncHandler(TableController.create))
+router.post('/list', asyncHandler(TableController.list))
+router.post('/update', asyncHandler(TableController.update))
+router.post('delete', asyncHandler(TableController.delete))
 
 
 module.exports = router

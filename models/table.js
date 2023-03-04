@@ -32,6 +32,6 @@ var TableSchema = mongoose.Schema({
     }
 }, { timestamps: true });
 
-var Table = mongoose.model('TableSchema', TableSchema);
+var Table = mongoose.model('table', TableSchema);
 
 module.exports = Table;

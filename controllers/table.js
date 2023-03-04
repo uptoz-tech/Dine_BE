@@ -4,6 +4,7 @@ class TableController {
     constructor() { }
 
     async create(req, res) {
+        console.log(req.body,'body data')
         const create = await new Table(req.body).save();
         return res.status(200).json({ success: true, data: create, message: "New Table Created" });
     }
