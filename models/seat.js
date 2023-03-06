@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 
 var SeatSchema = mongoose.Schema({
-    organisedby: {
-        type: String,
-        required: false,
+    table_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'table',
     },
-    from: {
-        type: Date,
+    seat_no: {
+        type: Number,
         required: false
+    },
+    seat_count: {
+        type: Number,
+        required: true
     },
     to: {
         type: Date,
@@ -17,14 +21,6 @@ var SeatSchema = mongoose.Schema({
     duration: {
         type: String,
         required: false,
-    },
-    // members: {
-    //     type: Array,
-    //     required: false
-    // },
-    subject: {
-        type:String,
-        required:false
     },
     deleted: {
         type: Boolean,

@@ -29,6 +29,10 @@ var TableSchema = mongoose.Schema({
     deleted: {
         type: Boolean,
         default: false,
+    },
+    status: {
+        type: Boolean,
+        default: false,
     }
 }, { timestamps: true });
 
